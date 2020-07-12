@@ -1,0 +1,20 @@
+description: Contracts API contract descdription
+name: Contracts API contract
+priority: 1
+request:
+  url: /contracts
+  method: GET
+response:
+  status: 200
+  bodyFromFile: response.json
+  matchers:
+    body:
+      - path: $[*].id
+        type: by_regex
+        predefined: uuid
+      - path: $[*].signee
+        type: by_regex
+        predefined: non_empty
+      - path: $[*].dateCreated
+        type: by_regex
+        predefined: iso_8601_with_offset
