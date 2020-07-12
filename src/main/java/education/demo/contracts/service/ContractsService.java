@@ -13,7 +13,7 @@ public class ContractsService {
         return List.of(ContractDto.builder()
             .id(UUID.randomUUID().toString())
             .title("Very important contract")
-            .signee("John Smith")
+            .signees(List.of("John Smith"))
             .dateCreated(Instant.now())
             .build());
     }

@@ -1,6 +1,7 @@
 package education.demo.contracts.dto;
 
 import java.time.Instant;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -18,7 +19,7 @@ public class ContractDto {
 
     private final String text;
 
-    private final String signee;
+    private final List<String> signees;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX", timezone = "UTC")
     private final Instant dateCreated;
